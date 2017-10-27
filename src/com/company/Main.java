@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.colleges.College;
 import com.company.jobs.Job;
+import com.company.resume.Resume;
 import com.company.skills.Skill;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class Main {
         int size = 20;
         int counter = 0;
         counter+=1;
+        Resume resume = new Resume();
         College college = new College();
         Job job = new Job();
         Skill skill = new Skill();
@@ -63,9 +65,6 @@ public class Main {
             do {
                 System.out.println("Please submit between 1 to 10 entries.");
                 System.out.println(" ");
-                if(counter < 10){
-                    System.out.println("You have exceeded 10 entries");
-                }
                 System.out.println("Enter the Degree of College");
                 college.degree = keyboard.nextLine();
                 System.out.println("Enter Major at College:");
@@ -75,22 +74,31 @@ public class Main {
                 System.out.println("Enter the year of Graduation");
                 college.year = keyboard.nextInt();
                 keyboard.nextLine();
-
                 education.add(college);
-
+                counter++;
                 System.out.println("Do you want to enter a school?");
                 answer = keyboard.nextLine();
                 if (!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
                     System.out.println("Invalid entry. Please enter 'Y' or 'N'");
                     answer = keyboard.nextLine();
+
+                    while (answer.equalsIgnoreCase("y") || !answer.equalsIgnoreCase("n")) ;
+                    if (counter < 1) {
+                        System.out.println("You must submit at least 1 entry");
+                    } else if (counter > 20) {
+                        System.out.println("You have exceeded 10 entries!");
+                    }
+
+
                 }
-            }while (answer.equalsIgnoreCase("y") || !answer.equalsIgnoreCase("n"));
+
 
             System.out.println("You have submitted" + " " +(counter+=1)+ " " +"entries");
             System.out.println(" ");
 
             //Print all college entries
             System.out.println("Here are the education achievements you entered:");
+                System.out.println(" ");
 
             for (College colleges : education) {
                 System.out.print(college.degree);
@@ -105,7 +113,7 @@ public class Main {
                 do {
                     System.out.println("Please submit between 0 to 10 entries.");
                     System.out.println("");
-                    if(counter < 10){
+                    if(counter > 10){
                         System.out.println("You have exceeded 10 entries");
                     }
                     System.out.println("Enter the job title");
@@ -144,7 +152,9 @@ public class Main {
             do {
                 System.out.println("Please submit between 1 to 20 entries");
                 System.out.println("");
-                if(counter < 10){
+                if( counter < 1){
+                    System.out.println("Please submit at least 1 entry!");
+                }else if(counter > 20){
                     System.out.println("You have exceeded 20 entries!");
                 }
                 System.out.println("Enter your first skill");
@@ -200,7 +210,8 @@ public class Main {
             System.out.println(skill.skill3);
 
         } while (answer.equalsIgnoreCase("y"));
-    }
+    }while(answer.equalsIgnoreCase("y"));
+}
 }
 
 

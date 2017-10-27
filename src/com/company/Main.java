@@ -63,6 +63,9 @@ public class Main {
             do {
                 System.out.println("Please submit between 1 to 10 entries.");
                 System.out.println(" ");
+                if(counter < 10){
+                    System.out.println("You have exceeded 10 entries");
+                }
                 System.out.println("Enter the Degree of College");
                 college.degree = keyboard.nextLine();
                 System.out.println("Enter Major at College:");
@@ -102,6 +105,9 @@ public class Main {
                 do {
                     System.out.println("Please submit between 0 to 10 entries.");
                     System.out.println("");
+                    if(counter < 10){
+                        System.out.println("You have exceeded 10 entries");
+                    }
                     System.out.println("Enter the job title");
                     job.title = keyboard.nextLine();
                     System.out.println("Enter the place of the job:");
@@ -126,6 +132,7 @@ public class Main {
 
                 //Print all job entries
                 System.out.println("Here are the work experiences you entered:");
+                System.out.println(" ");
 
                 for (Job jobs : experience) {
                     System.out.println(job.title);
@@ -137,6 +144,9 @@ public class Main {
             do {
                 System.out.println("Please submit between 1 to 20 entries");
                 System.out.println("");
+                if(counter < 10){
+                    System.out.println("You have exceeded 20 entries!");
+                }
                 System.out.println("Enter your first skill");
                 skill.skill1 = keyboard.nextLine();
                 System.out.println("Enter your second skill:");
@@ -157,6 +167,7 @@ public class Main {
 
             //Print all skills with ratings
             System.out.println("Here are the skills and ratings you entered:");
+            System.out.println(" ");
 
             for (Skill skills : expertise) {
                 System.out.println(skill.skill1);

@@ -37,6 +37,7 @@ public class Main {
 
         int size = 20;
         int counter = 0;
+        counter+=1;
         College college = new College();
         Job job = new Job();
         Skill skill = new Skill();
@@ -82,7 +83,7 @@ public class Main {
                 }
             }while (answer.equalsIgnoreCase("y") || !answer.equalsIgnoreCase("n"));
 
-            System.out.println("You have submitted" + " " +counter+1+ " " +"entries");
+            System.out.println("You have submitted" + " " +(counter+=1)+ " " +"entries");
             System.out.println(" ");
 
             //Print all college entries
@@ -99,7 +100,7 @@ public class Main {
             }
 
                 do {
-                    System.out.println("Please submit between 0 to 20 entries.");
+                    System.out.println("Please submit between 0 to 10 entries.");
                     System.out.println("");
                     System.out.println("Enter the job title");
                     job.title = keyboard.nextLine();
@@ -120,7 +121,7 @@ public class Main {
                         answer = keyboard.nextLine();
                     }
                 } while (answer.equalsIgnoreCase("y") || !answer.equalsIgnoreCase("n"));
-                  System.out.println("You have submitted" + " " +counter+1+ " " +"entries");
+                  System.out.println("You have submitted" + " " +(counter+=1)+ " " +"entries");
                   System.out.println(" ");
 
                 //Print all job entries
@@ -134,7 +135,7 @@ public class Main {
                 }
 
             do {
-                System.out.println("Please submit between 1 to 10 entries");
+                System.out.println("Please submit between 1 to 20 entries");
                 System.out.println("");
                 System.out.println("Enter your first skill");
                 skill.skill1 = keyboard.nextLine();
@@ -150,7 +151,7 @@ public class Main {
                     answer = keyboard.nextLine();
                 }
             } while (answer.equalsIgnoreCase("y") || !answer.equalsIgnoreCase("n"));
-            System.out.println("You have submitted" + " " +counter+1+ " " +"entries");
+            System.out.println("You have submitted" + " " +(counter+=1)+ " " +"entries");
             System.out.println(" ");
 
 
